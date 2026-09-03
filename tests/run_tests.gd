@@ -76,6 +76,7 @@ func _run():
 	await _test_fabric_banking()
 	_test_remove_skill_target()
 	await _test_remove3_preserves_tray_tiles()
+	await _test_remove3_counts_as_solved()
 	await _test_bgm_levels()
 	await _test_bgm_restart_after_menu_fade()
 	await _test_sfx_levels()
@@ -894,6 +895,41 @@ func _test_remove3_preserves_tray_tiles():
 	_check(removed == 3, "remove3 removes exactly 3 tiles")
 	_check(is_instance_valid(tray_node), "remove3 keeps tray tile nodes alive")
 	_check(board._entries[3].node != null, "remove3 keeps tray tile node reference")
+
+func _test_remove3_counts_as_solved():
+	await process_frame
+	var main = load("res://scenes/main/Main.tscn").instantiate()
+	root.add_child(main)
+	await process_frame
+	await process_frame
+	var sm := root.get_node("SaveManager")
+	sm.reset_to_defaults()
+	main.start_level(3)
+	var solved_types := []
+	main.board.tile_solved.connect(func(type: int): solved_types.append(type))
+	var entries := []
+	for i in range(3):
+		var node = load("res://scenes/board/Tile.tscn").instantiate()
+		main.add_child(node)
+		node.setup(7, BoardGenerator.TILE_SIZE)
+		entries.append({
+			"node": node,
+			"type": 7,
+			"pos": Vector2(100 + i * 64, 100),
+			"z": BoardGenerator.CELL_STRIDE,
+			"removed": false,
+		})
+	main.board._entries = entries
+	main.board._update_accessibility()
+	var removed = await main.board.remove_triple()
+	_check(removed == 3, "remove3 test removes the solved type")
+	_check(solved_types == [7], "remove3 reports the solved tile type")
+	main._win()
+	_check(sm.tile_fabrics.get(7, 0) == 1, "remove3 solved type earns fabric")
+	var popup := _first_result_popup(main)
+	var grid: GridContainer = popup.get_node("Panel/Margin/VBox/PreviewScroll/PreviewCenter/PreviewGrid")
+	_check(grid.get_child_count() == 1, "remove3 solved type appears in result preview")
+	main.queue_free()
 
 func _test_bgm_levels():
 	await process_frame

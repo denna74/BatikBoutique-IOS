@@ -41,6 +41,7 @@ func _ready():
 	_setup_skill_buttons()
 	board.tile_tapped.connect(_on_tile_tapped)
 	board.board_cleared.connect(_on_board_cleared)
+	board.tile_solved.connect(_on_matched)
 	tray.tray_changed.connect(_on_tray_changed)
 	tray.matched.connect(_on_matched)
 	pause_button.pressed.connect(_toggle_pause)

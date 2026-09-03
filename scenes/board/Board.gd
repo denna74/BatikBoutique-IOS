@@ -5,6 +5,7 @@ const TileScene := preload("res://scenes/board/Tile.tscn")
 
 signal tile_tapped(entry: Dictionary)
 signal board_cleared()
+signal tile_solved(type: int)
 
 var layout: Dictionary = {}
 var _entries: Array = []
@@ -138,6 +139,7 @@ func remove_triple() -> int:
 			e.node.queue_free()
 			e.node = null
 	_update_accessibility()
+	tile_solved.emit(chosen)
 	if remaining_count() == 0:
 		board_cleared.emit()
 	return removed
