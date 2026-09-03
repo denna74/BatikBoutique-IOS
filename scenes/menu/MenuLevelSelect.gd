@@ -17,6 +17,7 @@ const GOLD_SMALL := preload("res://assets/buttons/gold_small.png")
 @onready var level_track_view: Control = $LevelTrackView
 @onready var logo: TextureRect = $MainMenuView/Logo
 @onready var settings_btn: Button = $MainMenuView/SettingsButton
+@onready var settings_label: Label = $MainMenuView/SettingsButton/HBox/Label
 @onready var boutique_btn: Button = $MainMenuView/BoutiqueButton
 @onready var factory_btn: Button = $MainMenuView/FactoryButton
 @onready var gallery_btn: Button = $MainMenuView/GalleryButton
@@ -169,7 +170,7 @@ func _close_settings_popup():
 
 func _update_ui_texts(_lang: String = ""):
 	var t := TranslationManager
-	settings_btn.text = t.t("settings")
+	settings_label.text = t.t("settings")
 	boutique_btn.text = t.t("boutique")
 	factory_btn.text = t.t("factory")
 	gallery_btn.text = t.t("gallery")
