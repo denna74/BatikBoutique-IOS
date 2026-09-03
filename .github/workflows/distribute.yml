@@ -110,6 +110,15 @@ jobs:
           godot --headless --import
           godot --headless --export-release "iOS" build/ios/BatikBoutique.xcodeproj
 
+      - name: Patch iOS Launch Screen (replace Godot logo with game splash)
+        run: |
+          SPLASH="build/ios/BatikBoutique/Images.xcassets/SplashImage.imageset"
+          STORYBOARD="build/ios/BatikBoutique/Launch Screen.storyboard"
+          SRC="assets/dgs_boot_screen.png"
+          sips -z 2752 1536 "$SRC" --out "$SPLASH/splash@2x.png"
+          sips -z 4128 2304 "$SRC" --out "$SPLASH/splash@3x.png"
+          sed -i 's/contentMode="center"/contentMode="scaleAspectFill"/' "$STORYBOARD"
+
       - name: Run Fastlane Pipeline
         run: fastlane ios deploy_testflight
         env:
