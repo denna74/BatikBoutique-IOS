@@ -1,50 +1,6 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Create certificates and provisioning profiles"
-  lane :init_certificates do
-    api_key = app_store_connect_api_key(
-      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-      issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
-      is_key_content_base64: true
-    )
-
-    cert(
-      api_key: api_key,
-      output_path: "build/certs"
-    )
-
-    sigh(
-      api_key: api_key,
-      app_identifier: "com.batikboutique",
-      output_path: "build/profiles",
-      force: true
-    )
-  end
-
-  desc "Fetch certificates and provisioning profiles"
-  lane :fetch_certificates do
-    api_key = app_store_connect_api_key(
-      key_id: ENV["APP_STORE_CONNECT_API_KEY_ID"],
-      issuer_id: ENV["APP_STORE_CONNECT_API_ISSUER_ID"],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
-      is_key_content_base64: true
-    )
-
-    cert(
-      api_key: api_key,
-      output_path: "build/certs"
-    )
-
-    sigh(
-      api_key: api_key,
-      app_identifier: "com.batikboutique",
-      output_path: "build/profiles",
-      readonly: true
-    )
-  end
-
   desc "List in-app purchase products and their App Store Connect state (no upload)"
   lane :iap_products do
     api_key = app_store_connect_api_key(

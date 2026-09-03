@@ -23,14 +23,15 @@ Create a **public** GitHub repository for this project, then add these repositor
 | `APP_STORE_CONNECT_API_KEY_KEY` | Your App Store Connect API private key (base64) |
 | `BUILD_CERTIFICATE_P12` | Base64 of the `.p12` distribution certificate (see below) |
 
-### 2. Initial Certificate Setup (One-Time)
+### 2. Code Signing Certificate (`.p12`)
 
-Run the **Initialize Certificates** workflow manually (Actions → Initialize Certificates → Run workflow). It creates a distribution certificate + provisioning profile via Fastlane and uploads a `.p12` artifact.
+This project reuses the team's existing Apple Distribution certificate (`.p12`). A single distribution certificate is team-scoped and signs all apps under the account, so no new certificate is needed here.
 
-Then:
-1. Download the `ios-certificates` artifact and extract `certificate.p12`
+1. Obtain an existing distribution `.p12` (e.g. the `certificate.p12` artifact from a prior project's setup) that contains a **valid, non-expired** Apple Distribution certificate and its **private key**
 2. Base64 encode it: `base64 -i certificate.p12`
 3. Store the output as the `BUILD_CERTIFICATE_P12` secret
+
+Do **not** run an "Initialize Certificates" workflow — a team is limited to 3 active distribution certificates, and reusing an existing one avoids that limit entirely.
 
 ### 3. Build & Deploy
 
