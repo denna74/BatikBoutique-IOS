@@ -1,0 +1,394 @@
+[
+  {
+	"id": 0,
+	"name_en": "Parang Diagonal",
+	"name_id": "Parang Diagonal",
+	"catalog_en": "Parang Diagonal – Indigo",
+	"catalog_id": "Parang Diagonal – Nila"
+  },
+  {
+	"id": 1,
+	"name_en": "Parang Diagonal",
+	"name_id": "Parang Diagonal",
+	"catalog_en": "Parang Diagonal – Rust Brown",
+	"catalog_id": "Parang Diagonal – Cokelat Karat"
+  },
+  {
+	"id": 2,
+	"name_en": "Parang Diagonal",
+	"name_id": "Parang Diagonal",
+	"catalog_en": "Parang Diagonal – Cream Brown",
+	"catalog_id": "Parang Diagonal – Cokelat Krem"
+  },
+  {
+	"id": 3,
+	"name_en": "Mega Mendung Cloud",
+	"name_id": "Mega Mendung Awan",
+	"catalog_en": "Mega Mendung Cloud – Sky Blue",
+	"catalog_id": "Mega Mendung Awan – Biru Langit"
+  },
+  {
+	"id": 4,
+	"name_en": "Ceplok Cross Medallion",
+	"name_id": "Ceplok Medalion Silang",
+	"catalog_en": "Ceplok Cross Medallion – Crimson",
+	"catalog_id": "Ceplok Medalion Silang – Merah Karmin"
+  },
+  {
+	"id": 5,
+	"name_en": "Ceplok Flower Rosette",
+	"name_id": "Ceplok Roset Bunga",
+	"catalog_en": "Ceplok Flower Rosette – Maroon",
+	"catalog_id": "Ceplok Roset Bunga – Merah Marun"
+  },
+  {
+	"id": 6,
+	"name_en": "Truntum Scatter Flower",
+	"name_id": "Truntum Bunga Tersebar",
+	"catalog_en": "Truntum Scatter Flower – Sage Green",
+	"catalog_id": "Truntum Bunga Tersebar – Hijau Sage"
+  },
+  {
+	"id": 7,
+	"name_en": "Ceplok Circle Medallion",
+	"name_id": "Ceplok Medalion Lingkaran",
+	"catalog_en": "Ceplok Circle Medallion – Amber Multi",
+	"catalog_id": "Ceplok Medalion Lingkaran – Ambar Beragam"
+  },
+  {
+	"id": 8,
+	"name_en": "Ceplok Circle Medallion",
+	"name_id": "Ceplok Medalion Lingkaran",
+	"catalog_en": "Ceplok Circle Medallion – Gold",
+	"catalog_id": "Ceplok Medalion Lingkaran – Emas"
+  },
+  {
+	"id": 9,
+	"name_en": "Sekar Floral Vine",
+	"name_id": "Sekar Sulur Bunga",
+	"catalog_en": "Sekar Floral Vine – Blush Pink",
+	"catalog_id": "Sekar Sulur Bunga – Merah Muda"
+  },
+  {
+	"id": 10,
+	"name_en": "Kawung Diamond Lattice",
+	"name_id": "Kawung Kisi Belah Ketupat",
+	"catalog_en": "Kawung Diamond Lattice – Navy",
+	"catalog_id": "Kawung Kisi Belah Ketupat – Biru Navy"
+  },
+  {
+	"id": 11,
+	"name_en": "Ceplok Circle Cross",
+	"name_id": "Ceplok Silang Lingkaran",
+	"catalog_en": "Ceplok Circle Cross – Maroon",
+	"catalog_id": "Ceplok Silang Lingkaran – Merah Marun"
+  },
+  {
+	"id": 12,
+	"name_en": "Lereng Lattice Stripe",
+	"name_id": "Lereng Kisi Garis",
+	"catalog_en": "Lereng Lattice Stripe – Navy Cream",
+	"catalog_id": "Lereng Kisi Garis – Krem Navy"
+  },
+  {
+	"id": 13,
+	"name_en": "Kawung Oval Lattice",
+	"name_id": "Kawung Kisi Oval",
+	"catalog_en": "Kawung Oval Lattice – Powder Blue",
+	"catalog_id": "Kawung Kisi Oval – Biru Muda"
+  },
+  {
+	"id": 14,
+	"name_en": "Kawung Diamond Grid",
+	"name_id": "Kawung Kisi Belah Ketupat",
+	"catalog_en": "Kawung Diamond Grid – Brick Red",
+	"catalog_id": "Kawung Kisi Belah Ketupat – Merah Bata"
+  },
+  {
+	"id": 15,
+	"name_en": "Ceplok Ornate Medallion",
+	"name_id": "Ceplok Medalion Hias",
+	"catalog_en": "Ceplok Ornate Medallion – Plum",
+	"catalog_id": "Ceplok Medalion Hias – Plum"
+  },
+  {
+	"id": 16,
+	"name_en": "Kawung Leaf Circle",
+	"name_id": "Kawung Lingkaran Daun",
+	"catalog_en": "Kawung Leaf Circle – Forest Green",
+	"catalog_id": "Kawung Lingkaran Daun – Hijau Hutan"
+  },
+  {
+	"id": 17,
+	"name_en": "Ceplok Circle Grid",
+	"name_id": "Ceplok Kisi Lingkaran",
+	"catalog_en": "Ceplok Circle Grid – Green Amber",
+	"catalog_id": "Ceplok Kisi Lingkaran – Hijau Ambar"
+  },
+  {
+	"id": 18,
+	"name_en": "Sekar Medallion Bloom",
+	"name_id": "Sekar Medalion Mekar",
+	"catalog_en": "Sekar Medallion Bloom – Bronze",
+	"catalog_id": "Sekar Medalion Mekar – Perunggu"
+  },
+  {
+	"id": 19,
+	"name_en": "Kawung Diamond Lattice",
+	"name_id": "Kawung Kisi Belah Ketupat",
+	"catalog_en": "Kawung Diamond Lattice – Rose Pink",
+	"catalog_id": "Kawung Kisi Belah Ketupat – Merah Muda Mawar"
+  },
+  {
+	"id": 20,
+	"name_en": "Kawung Star Lattice",
+	"name_id": "Kawung Kisi Bintang",
+	"catalog_en": "Kawung Star Lattice – Navy",
+	"catalog_id": "Kawung Kisi Bintang – Biru Navy"
+  },
+  {
+	"id": 21,
+	"name_en": "Ceplok Cross Star",
+	"name_id": "Ceplok Bintang Silang",
+	"catalog_en": "Ceplok Cross Star – Maroon Brown",
+	"catalog_id": "Ceplok Bintang Silang – Cokelat Marun"
+  },
+  {
+	"id": 22,
+	"name_en": "Ceplok Flower Rosette",
+	"name_id": "Ceplok Roset Bunga",
+	"catalog_en": "Ceplok Flower Rosette – Cream Maroon",
+	"catalog_id": "Ceplok Roset Bunga – Marun Krem"
+  },
+  {
+	"id": 23,
+	"name_en": "Kawung Star Lattice",
+	"name_id": "Kawung Kisi Bintang",
+	"catalog_en": "Kawung Star Lattice – Teal",
+	"catalog_id": "Kawung Kisi Bintang – Toska"
+  },
+  {
+	"id": 24,
+	"name_en": "Sekar Star Cluster",
+	"name_id": "Sekar Klaster Bintang",
+	"catalog_en": "Sekar Star Cluster – Navy Cream Flower",
+	"catalog_id": "Sekar Klaster Bintang – Bunga Krem Navy"
+  },
+  {
+	"id": 25,
+	"name_en": "Ceplok Star",
+	"name_id": "Ceplok Bintang",
+	"catalog_en": "Ceplok Star – Black Rust",
+	"catalog_id": "Ceplok Bintang – Karat Hitam"
+  },
+  {
+	"id": 26,
+	"name_en": "Kawung Petal Cross",
+	"name_id": "Kawung Silang Kelopak",
+	"catalog_en": "Kawung Petal Cross – Teal Green",
+	"catalog_id": "Kawung Silang Kelopak – Hijau Toska"
+  },
+  {
+	"id": 27,
+	"name_en": "Kawung Petal Cross",
+	"name_id": "Kawung Silang Kelopak",
+	"catalog_en": "Kawung Petal Cross – Rust Orange",
+	"catalog_id": "Kawung Silang Kelopak – Oranye Karat"
+  },
+  {
+	"id": 28,
+	"name_en": "Ceplok Ornate Cross",
+	"name_id": "Ceplok Silang Hias",
+	"catalog_en": "Ceplok Ornate Cross – Navy Brown",
+	"catalog_id": "Ceplok Silang Hias – Cokelat Navy"
+  },
+  {
+	"id": 29,
+	"name_en": "Ceplok Flower Medallion",
+	"name_id": "Ceplok Medalion Bunga",
+	"catalog_en": "Ceplok Flower Medallion – Blue Olive",
+	"catalog_id": "Ceplok Medalion Bunga – Biru Zaitun"
+  },
+  {
+	"id": 30,
+	"name_en": "Ceplok Flower Cross",
+	"name_id": "Ceplok Silang Bunga",
+	"catalog_en": "Ceplok Flower Cross – Indigo Olive",
+	"catalog_id": "Ceplok Silang Bunga – Nila Zaitun"
+  },
+  {
+	"id": 31,
+	"name_en": "Lereng Wave Lattice",
+	"name_id": "Lereng Kisi Gelombang",
+	"catalog_en": "Lereng Wave Lattice – Teal Cream",
+	"catalog_id": "Lereng Kisi Gelombang – Krem Toska"
+  },
+  {
+	"id": 32,
+	"name_en": "Sekar Star Cluster",
+	"name_id": "Sekar Klaster Bintang",
+	"catalog_en": "Sekar Star Cluster – Navy Cream Leaf",
+	"catalog_id": "Sekar Klaster Bintang – Daun Krem Navy"
+  },
+  {
+	"id": 33,
+	"name_en": "Nitik Diamond Dot",
+	"name_id": "Nitik Titik Belah Ketupat",
+	"catalog_en": "Nitik Diamond Dot – Cocoa Brown",
+	"catalog_id": "Nitik Titik Belah Ketupat – Cokelat Kakao"
+  },
+  {
+	"id": 34,
+	"name_en": "Nitik Diamond Dot",
+	"name_id": "Nitik Titik Belah Ketupat",
+	"catalog_en": "Nitik Diamond Dot – Tan",
+	"catalog_id": "Nitik Titik Belah Ketupat – Krem"
+  },
+  {
+	"id": 35,
+	"name_en": "Ceplok Circle Medallion",
+	"name_id": "Ceplok Medalion Lingkaran",
+	"catalog_en": "Ceplok Circle Medallion – Teal",
+	"catalog_id": "Ceplok Medalion Lingkaran – Toska"
+  },
+  {
+	"id": 36,
+	"name_en": "Lereng Cross Lattice",
+	"name_id": "Lereng Kisi Silang",
+	"catalog_en": "Lereng Cross Lattice – Plum Brown",
+	"catalog_id": "Lereng Kisi Silang – Cokelat Plum"
+  },
+  {
+	"id": 37,
+	"name_en": "Sekar Star Cluster",
+	"name_id": "Sekar Klaster Bintang",
+	"catalog_en": "Sekar Star Cluster – Rust Brown",
+	"catalog_id": "Sekar Klaster Bintang – Cokelat Karat"
+  },
+  {
+	"id": 38,
+	"name_en": "Ceplok Flower Medallion",
+	"name_id": "Ceplok Medalion Bunga",
+	"catalog_en": "Ceplok Flower Medallion – Orange Navy",
+	"catalog_id": "Ceplok Medalion Bunga – Oranye Navy"
+  },
+  {
+	"id": 39,
+	"name_en": "Kawung Cross Grid",
+	"name_id": "Kawung Kisi Silang",
+	"catalog_en": "Kawung Cross Grid – Navy",
+	"catalog_id": "Kawung Kisi Silang – Biru Navy"
+  },
+  {
+	"id": 40,
+	"name_en": "Ceplok Cross Medallion",
+	"name_id": "Ceplok Medalion Silang",
+	"catalog_en": "Ceplok Cross Medallion – Umber Brown",
+	"catalog_id": "Ceplok Medalion Silang – Cokelat Umbra"
+  },
+  {
+	"id": 41,
+	"name_en": "Ceplok Cross Medallion",
+	"name_id": "Ceplok Medalion Silang",
+	"catalog_en": "Ceplok Cross Medallion – Slate Navy",
+	"catalog_id": "Ceplok Medalion Silang – Biru Slate"
+  },
+  {
+	"id": 42,
+	"name_en": "Ceplok Circle Grid",
+	"name_id": "Ceplok Kisi Lingkaran",
+	"catalog_en": "Ceplok Circle Grid – Blue",
+	"catalog_id": "Ceplok Kisi Lingkaran – Biru"
+  },
+  {
+	"id": 43,
+	"name_en": "Kawung Flower Lattice",
+	"name_id": "Kawung Kisi Bunga",
+	"catalog_en": "Kawung Flower Lattice – Plum Brown",
+	"catalog_id": "Kawung Kisi Bunga – Cokelat Plum"
+  },
+  {
+	"id": 44,
+	"name_en": "Ceplok Star Cross",
+	"name_id": "Ceplok Bintang Silang",
+	"catalog_en": "Ceplok Star Cross – Espresso Cream",
+	"catalog_id": "Ceplok Bintang Silang – Krem Espreso"
+  },
+  {
+	"id": 45,
+	"name_en": "Ceplok Star Cross",
+	"name_id": "Ceplok Bintang Silang",
+	"catalog_en": "Ceplok Star Cross – Rust Orange",
+	"catalog_id": "Ceplok Bintang Silang – Oranye Karat"
+  },
+  {
+	"id": 46,
+	"name_en": "Kawung Star Kaleidoscope",
+	"name_id": "Kawung Kaleidoskop Bintang",
+	"catalog_en": "Kawung Star Kaleidoscope – Turquoise",
+	"catalog_id": "Kawung Kaleidoskop Bintang – Pirus"
+  },
+  {
+	"id": 47,
+	"name_en": "Sekar Floral Cluster",
+	"name_id": "Sekar Klaster Bunga",
+	"catalog_en": "Sekar Floral Cluster – Tan Cream",
+	"catalog_id": "Sekar Klaster Bunga – Krem"
+  },
+  {
+	"id": 48,
+	"name_en": "Sekar Floral Cluster",
+	"name_id": "Sekar Klaster Bunga",
+	"catalog_en": "Sekar Floral Cluster – Amber Brown",
+	"catalog_id": "Sekar Klaster Bunga – Cokelat Ambar"
+  },
+  {
+	"id": 49,
+	"name_en": "Ceplok Cross Leaf",
+	"name_id": "Ceplok Silang Daun",
+	"catalog_en": "Ceplok Cross Leaf – Deep Purple",
+	"catalog_id": "Ceplok Silang Daun – Ungu Tua"
+  },
+  {
+	"id": 50,
+	"name_en": "Ceplok Circle Grid",
+	"name_id": "Ceplok Kisi Lingkaran",
+	"catalog_en": "Ceplok Circle Grid – Green Leaf",
+	"catalog_id": "Ceplok Kisi Lingkaran – Hijau Daun"
+  },
+  {
+	"id": 51,
+	"name_en": "Ceplok Cross Diamond",
+	"name_id": "Ceplok Belah Ketupat Silang",
+	"catalog_en": "Ceplok Cross Diamond – Cream Red",
+	"catalog_id": "Ceplok Belah Ketupat Silang – Merah Krem"
+  },
+  {
+	"id": 52,
+	"name_en": "Sekar Leaf Motif",
+	"name_id": "Sekar Motif Daun",
+	"catalog_en": "Sekar Leaf Motif – Sage Green",
+	"catalog_id": "Sekar Motif Daun – Hijau Sage"
+  },
+  {
+	"id": 53,
+	"name_en": "Sekar Flower Medallion",
+	"name_id": "Sekar Medalion Bunga",
+	"catalog_en": "Sekar Flower Medallion – Teal",
+	"catalog_id": "Sekar Medalion Bunga – Toska"
+  },
+  {
+	"id": 54,
+	"name_en": "Sekar Flower Medallion",
+	"name_id": "Sekar Medalion Bunga",
+	"catalog_en": "Sekar Flower Medallion – Teal Bronze",
+	"catalog_id": "Sekar Medalion Bunga – Perunggu Toska"
+  },
+  {
+	"id": 55,
+	"name_en": "Ceplok Cross Flower",
+	"name_id": "Ceplok Silang Bunga",
+	"catalog_en": "Ceplok Cross Flower – Cornflower Blue",
+	"catalog_id": "Ceplok Silang Bunga – Biru Bunga Jagung"
+  }
+]

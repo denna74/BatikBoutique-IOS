@@ -1,0 +1,62 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Batik Boutique"
+config/description="A Tile Fun-style triple-match puzzle game about Indonesian batik"
+run/main_scene="res://scenes/menu/BootSplash.tscn"
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.7")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://icon.png"
+boot_splash/show_engine_logo=false
+
+[autoload]
+
+TranslationManager="*res://autoload/TranslationManager.gd"
+SfxManager="*res://autoload/SfxManager.gd"
+SaveManager="*res://autoload/SaveManager.gd"
+UiTransition="*res://autoload/UiTransition.gd"
+SceneManager="*res://autoload/SceneManager.gd"
+MusicManager="*res://autoload/MusicManager.gd"
+AdsManager="*res://autoload/AdsManager.gd"
+IAPConfig="*res://autoload/IAPConfig.gd"
+IAPManager="*res://autoload/IAPManager.gd"
+UnityAds="*res://autoload/UnityAds.gd"
+GodotIapPlugin="*uid://bfjo323qxscvt"
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=854
+window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-iap/plugin.cfg")
+
+[gui]
+
+theme/custom="res://resources/theme/main_theme.tres"
+
+[rendering]
+
+renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
+
+[unity_ads]
+
+auto_initialize=true
+test_mode=false
+ios/game_id="800366520"
+ios/placements/rewarded="Rewarded_iOS"

@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://bty5njmba7kd"]
+
+[ext_resource type="Script" uid="uid://mqbi157doqiu" path="res://scenes/boutique/WorkshopPopup.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://vhk2agjxvfm8" path="res://assets/buttons/gold_medium.png" id="2_gold"]
+[ext_resource type="Texture2D" uid="uid://cq6w25vca0ak1" path="res://assets/buttons/dark_medium.png" id="3_dark"]
+
+[sub_resource type="StyleBoxFlat" id="panel_style"]
+bg_color = Color(0.98, 0.93, 0.83, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxTexture" id="gold_style"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_gold")
+
+[sub_resource type="StyleBoxTexture" id="dark_style"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+texture = ExtResource("3_dark")
+
+[sub_resource type="StyleBoxFlat" id="white_dropdown_style"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.75, 0.65, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="WorkshopPopup" type="Control" unique_id=1364883338]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=845336111]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=660347999]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -215.0
+offset_top = -87.0
+offset_right = 215.0
+offset_bottom = 343.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("panel_style")
+
+[node name="Margin" type="MarginContainer" parent="Panel" unique_id=1876345623]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin" unique_id=903387927]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TypeGrid" type="GridContainer" parent="Panel/Margin/VBox" unique_id=1237827072]
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 4
+columns = 2
+
+[node name="ClothTypeLabel" type="Label" parent="Panel/Margin/VBox/TypeGrid" unique_id=1237827072]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="FabricHeaderLabel" type="Label" parent="Panel/Margin/VBox/TypeGrid" unique_id=1338743753]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="TypeDropdown" type="OptionButton" parent="Panel/Margin/VBox/TypeGrid" unique_id=1338743753]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("white_dropdown_style")
+theme_override_styles/hover = SubResource("white_dropdown_style")
+theme_override_styles/pressed = SubResource("white_dropdown_style")
+theme_override_styles/focus = SubResource("white_dropdown_style")
+
+[node name="FabricLabel" type="Label" parent="Panel/Margin/VBox/TypeGrid" unique_id=1338743753]
+layout_mode = 2
+vertical_alignment = 1
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="MotiveLabel" type="Label" parent="Panel/Margin/VBox" unique_id=1431901041]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="MotiveScroll" type="ScrollContainer" parent="Panel/Margin/VBox" unique_id=1573320036]
+custom_minimum_size = Vector2(0, 260)
+layout_mode = 2
+
+[node name="MotiveGrid" type="GridContainer" parent="Panel/Margin/VBox/MotiveScroll" unique_id=41929718]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 7
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/Margin/VBox" unique_id=1484562107]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="WorkButton" type="Button" parent="Panel/Margin/VBox/Buttons" unique_id=61722662]
+custom_minimum_size = Vector2(150, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("gold_style")
+theme_override_styles/pressed = SubResource("gold_style")
+theme_override_styles/hover = SubResource("gold_style")
+
+[node name="CancelButton" type="Button" parent="Panel/Margin/VBox/Buttons" unique_id=1913353618]
+custom_minimum_size = Vector2(150, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("dark_style")
+theme_override_styles/pressed = SubResource("dark_style")
+theme_override_styles/hover = SubResource("dark_style")

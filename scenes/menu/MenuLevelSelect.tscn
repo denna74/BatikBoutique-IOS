@@ -1,0 +1,243 @@
+[gd_scene format=3 uid="uid://w2byt0q6pnse"]
+
+[ext_resource type="Script" uid="uid://dk27iysi6bbvc" path="res://scenes/menu/MenuLevelSelect.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c360wumtysx70" path="res://assets/logo.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://y11jyjwn4p2g" path="res://assets/main_menu_bg.png" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/character/Character.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://vhk2agjxvfm8" path="res://assets/buttons/gold_medium.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cq6w25vca0ak1" path="res://assets/buttons/dark_medium.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://b6c2io2gy7uoc" path="res://assets/level_track.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dce2nrjuoo65r" path="res://assets/buttons/dark_small.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/buttons/setting_small.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/buttons/square_large.png" id="11"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dark"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 10.0
+texture = ExtResource("7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gold"]
+content_margin_left = 30.0
+content_margin_top = 12.0
+content_margin_right = 30.0
+content_margin_bottom = 12.0
+texture = ExtResource("5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dark_small"]
+content_margin_left = 16.0
+content_margin_top = 6.0
+content_margin_right = 16.0
+content_margin_bottom = 6.0
+texture = ExtResource("9")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_square"]
+content_margin_left = 20.0
+content_margin_top = 13.0
+content_margin_right = 16.0
+content_margin_bottom = 13.0
+texture = ExtResource("11")
+
+[node name="MenuLevelSelect" type="Control" unique_id=1605236081]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="." unique_id=617658166]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MainMenuView" type="Control" parent="." unique_id=620209484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" type="TextureRect" parent="MainMenuView" unique_id=1094624316]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 160.0
+offset_top = 20.0
+offset_right = -160.0
+offset_bottom = 180.0
+grow_horizontal = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="SettingsButton" type="Button" parent="MainMenuView"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 319.0
+offset_right = 130.0
+offset_bottom = 373.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_focus_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_pressed_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_hover_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_constants/h_separation = 0
+icon = ExtResource("10")
+expand_icon = true
+theme_override_styles/normal = SubResource("StyleBoxTexture_square")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_square")
+theme_override_styles/hover = SubResource("StyleBoxTexture_square")
+text = "Settings"
+
+[node name="BoutiqueButton" type="Button" parent="MainMenuView" unique_id=1278037768]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -27.0
+offset_right = 20.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_focus_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_pressed_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_hover_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_gold")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gold")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gold")
+text = "Boutique"
+
+[node name="FactoryButton" type="Button" parent="MainMenuView" unique_id=292384319]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = 53.0
+offset_right = 20.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_focus_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_pressed_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_hover_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_gold")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gold")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gold")
+text = "Factory"
+
+[node name="GalleryButton" type="Button" parent="MainMenuView" unique_id=711578727]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = 133.0
+offset_right = 20.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_focus_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_pressed_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_hover_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_gold")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gold")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gold")
+text = "Gallery"
+
+[node name="Character" parent="MainMenuView" unique_id=468710111 instance=ExtResource("4")]
+position = Vector2(372, 503)
+
+[node name="LevelTrackView" type="Control" parent="." unique_id=277463479]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="LevelTrackView" unique_id=1846411579]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BackButton" type="Button" parent="LevelTrackView" unique_id=65440515]
+layout_mode = 1
+offset_left = 360.0
+offset_top = 12.0
+offset_right = 447.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_focus_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_pressed_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_colors/font_hover_color = Color(0.18, 0.12, 0.06, 1)
+theme_override_styles/normal = SubResource("StyleBoxTexture_dark")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dark")
+theme_override_styles/hover = SubResource("StyleBoxTexture_dark")
+text = "Back"
+
+[node name="LevelScroll" type="ScrollContainer" parent="LevelTrackView" unique_id=1669638483]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 90.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="LevelGrid" type="VBoxContainer" parent="LevelTrackView/LevelScroll" unique_id=1661204077]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="BottomHint" type="Label" parent="LevelTrackView" unique_id=1749465350]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 812.0
+offset_bottom = 852.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 14
+text = "Match 3 identical batik tiles!"
+horizontal_alignment = 1

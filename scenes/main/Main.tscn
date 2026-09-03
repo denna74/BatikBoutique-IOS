@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://bqg3o1ptjtcuc"]
+
+[ext_resource type="Script" uid="uid://324cv0oiyel2" path="res://scenes/main/Main.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/board/Board.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/tray/Tray.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://c6bbn7sdna3us" path="res://assets/gameplay_bg.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://r56tc606b6xp" path="res://assets/buttons/square_small.png" id="5_square"]
+[ext_resource type="Texture2D" uid="uid://cjpq5qj8ubipy" path="res://assets/buttons/pause.png" id="6_pause"]
+
+[node name="Main" type="Control" unique_id=96258520]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="." unique_id=673310686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="." unique_id=467940440]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 480.0
+offset_bottom = 96.0
+
+[node name="LevelLabel" type="Label" parent="Header" unique_id=1248840397]
+layout_mode = 1
+offset_left = 23.0
+offset_top = 10.0
+offset_right = 247.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 28
+text = "Level 1"
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="Header" unique_id=527986307]
+layout_mode = 1
+offset_left = 51.0
+offset_top = 52.0
+offset_right = 275.0
+offset_bottom = 86.0
+theme_override_font_sizes/font_size = 20
+text = "Time: 0"
+vertical_alignment = 1
+
+[node name="PauseButton" type="TextureButton" parent="Header" unique_id=1396944895]
+custom_minimum_size = Vector2(58, 58)
+layout_mode = 1
+offset_left = 396.0
+offset_top = 18.0
+offset_right = 464.0
+offset_bottom = 78.0
+texture_normal = ExtResource("5_square")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="Icon" type="TextureRect" parent="Header/PauseButton" unique_id=15786019]
+layout_mode = 1
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 49.0
+offset_bottom = 45.0
+texture = ExtResource("6_pause")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Board" parent="." unique_id=1177993265 instance=ExtResource("2")]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -12.0
+offset_top = 96.0
+
+[node name="HelperBar" type="Control" parent="." unique_id=1142790414]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 775.0
+offset_right = 480.0
+offset_bottom = 837.0
+
+[node name="HBox" type="HBoxContainer" parent="HelperBar" unique_id=381466619]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 1.0
+offset_right = -10.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 40
+
+[node name="UndoButton" type="TextureButton" parent="HelperBar/HBox" unique_id=1824819008]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="StockLabel" type="Label" parent="HelperBar/HBox/UndoButton" unique_id=515116551]
+layout_mode = 1
+offset_left = 2.0
+offset_right = 30.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="ShuffleButton" type="TextureButton" parent="HelperBar/HBox" unique_id=697791678]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="StockLabel" type="Label" parent="HelperBar/HBox/ShuffleButton" unique_id=744657829]
+layout_mode = 1
+offset_left = 2.0
+offset_right = 30.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Remove3Button" type="TextureButton" parent="HelperBar/HBox" unique_id=360749554]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="StockLabel" type="Label" parent="HelperBar/HBox/Remove3Button" unique_id=1648376650]
+layout_mode = 1
+offset_left = 2.0
+offset_right = 30.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="ExtraSlotButton" type="TextureButton" parent="HelperBar/HBox" unique_id=1544939567]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="StockLabel" type="Label" parent="HelperBar/HBox/ExtraSlotButton" unique_id=1978986567]
+layout_mode = 1
+offset_left = 2.0
+offset_right = 30.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 1
+
+[node name="Tray" parent="." unique_id=333987578 instance=ExtResource("3")]
+layout_mode = 1
+anchors_preset = 0
+offset_top = 672.0

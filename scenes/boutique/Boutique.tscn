@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://o4iivk15ao6a"]
+
+[ext_resource type="Script" uid="uid://ckulqd4vhqwgh" path="res://scenes/boutique/Boutique.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/boutique_bg.jpeg" id="2_bg"]
+
+[node name="Boutique" type="Control" unique_id=1552581367]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1529312507]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+expand_mode = 1
+stretch_mode = 6
