@@ -40,7 +40,10 @@ func _style_popup():
 	panel.corner_radius_top_right = 8
 	panel.corner_radius_bottom_right = 8
 	panel.corner_radius_bottom_left = 8
+	panel.content_margin_top = 6
+	panel.content_margin_bottom = 6
 	popup.add_theme_stylebox_override("panel", panel)
+	popup.add_theme_constant_override("v_separation", 8)
 	var hover := StyleBoxFlat.new()
 	hover.bg_color = Color(0.9, 0.85, 0.75, 1)
 	popup.add_theme_stylebox_override("hover", hover)

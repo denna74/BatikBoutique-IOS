@@ -31,7 +31,7 @@
   "loading": "Loading...",
   "cloth_type": "Cloth type: %s",
   "cloth_type_label": "Cloth type",
-  "fabric": "Fabric",
+  "fabric": "Fabric needed",
   "motive": "Motive: %s",
   "motive_label": "Motive",
   "fabric_needed": "Fabric needed: %d",

@@ -97,9 +97,13 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 
 [node name="TypeDropdown" type="OptionButton" parent="Panel/Margin/VBox/TypeGrid" unique_id=1338743753]
-custom_minimum_size = Vector2(220, 0)
+custom_minimum_size = Vector2(220, 46)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("white_dropdown_style")
 theme_override_styles/hover = SubResource("white_dropdown_style")
 theme_override_styles/pressed = SubResource("white_dropdown_style")
@@ -133,18 +137,6 @@ layout_mode = 2
 theme_override_constants/separation = 24
 alignment = 1
 
-[node name="WorkButton" type="Button" parent="Panel/Margin/VBox/Buttons" unique_id=61722662]
-custom_minimum_size = Vector2(150, 46)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("gold_style")
-theme_override_styles/pressed = SubResource("gold_style")
-theme_override_styles/hover = SubResource("gold_style")
-
 [node name="CancelButton" type="Button" parent="Panel/Margin/VBox/Buttons" unique_id=1913353618]
 custom_minimum_size = Vector2(150, 46)
 layout_mode = 2
@@ -156,3 +148,15 @@ theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("dark_style")
 theme_override_styles/pressed = SubResource("dark_style")
 theme_override_styles/hover = SubResource("dark_style")
+
+[node name="WorkButton" type="Button" parent="Panel/Margin/VBox/Buttons" unique_id=61722662]
+custom_minimum_size = Vector2(150, 46)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("gold_style")
+theme_override_styles/pressed = SubResource("gold_style")
+theme_override_styles/hover = SubResource("gold_style")
