@@ -110,6 +110,9 @@ jobs:
           godot --headless --import
           godot --headless --export-release "iOS" build/ios/BatikBoutique.xcodeproj
 
+      - name: Configure Native iOS Launch Screen
+        run: ruby tools/patch_ios_launch_screen.rb
+
       - name: Run Fastlane Pipeline
         run: fastlane ios deploy_testflight
         env:
