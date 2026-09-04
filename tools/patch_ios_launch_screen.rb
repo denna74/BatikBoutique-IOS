@@ -11,7 +11,9 @@ imageset_source = File.join(project_root, "ios", "SplashImage.imageset")
 imageset_destination = File.join(app_dir, "Images.xcassets", "SplashImage.imageset")
 storyboard_destination = File.join(app_dir, "Launch Screen.storyboard")
 
-abort "Missing exported Xcode project: #{project_path}" unless File.file?(project_path)
+abort "Missing exported Xcode project: #{project_path}" unless Dir.exist?(project_path)
+project_file = File.join(project_path, "project.pbxproj")
+abort "Missing Xcode project file: #{project_file}" unless File.file?(project_file)
 abort "Missing launch storyboard source: #{storyboard_source}" unless File.file?(storyboard_source)
 abort "Missing splash image set source: #{imageset_source}" unless Dir.exist?(imageset_source)
 
