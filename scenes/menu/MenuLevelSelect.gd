@@ -234,18 +234,32 @@ func _ensure_track_hud():
 	_instant_mood_btn.pressed.connect(_on_instant_mood_pressed)
 	level_track_view.add_child(_instant_mood_btn)
 
+	var skill_panel := Panel.new()
+	skill_panel.position = Vector2(4, 719)
+	skill_panel.size = Vector2(472, 84)
+	skill_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var skill_panel_style := StyleBoxFlat.new()
+	skill_panel_style.bg_color = Color(1, 1, 1, 0.6)
+	skill_panel_style.set_corner_radius_all(12)
+	skill_panel_style.content_margin_left = 8.0
+	skill_panel_style.content_margin_top = 4.0
+	skill_panel_style.content_margin_right = 8.0
+	skill_panel_style.content_margin_bottom = 4.0
+	skill_panel.add_theme_stylebox_override("panel", skill_panel_style)
+	level_track_view.add_child(skill_panel)
+
 	var skill_row := HBoxContainer.new()
-	skill_row.position = Vector2(8, 723)
-	skill_row.size = Vector2(464, 76)
+	skill_row.position = Vector2(10, 723)
+	skill_row.size = Vector2(460, 76)
 	skill_row.add_theme_constant_override("separation", 0)
 	level_track_view.add_child(skill_row)
 	var square_tex := preload("res://assets/buttons/square_small.png")
 	for skill in _SKILL_ORDER:
 		var btn := TextureButton.new()
 		btn.ignore_texture_size = true
-		btn.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+		btn.stretch_mode = TextureButton.STRETCH_KEEP_CENTERED
 		btn.texture_normal = square_tex
-		btn.custom_minimum_size = Vector2(58, 58)
+		btn.custom_minimum_size = Vector2(115, 76)
 		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		btn.pressed.connect(_on_skill_buy.bind(skill))
 		skill_row.add_child(btn)
@@ -265,9 +279,9 @@ func _ensure_track_hud():
 		stock_label.set_anchors_preset(Control.PRESET_TOP_LEFT)
 		stock_label.offset_left = 2
 		stock_label.offset_top = 0
-		stock_label.offset_right = 30
-		stock_label.offset_bottom = 16
-		stock_label.add_theme_font_size_override("font_size", 11)
+		stock_label.offset_right = 34
+		stock_label.offset_bottom = 20
+		stock_label.add_theme_font_size_override("font_size", 14)
 		stock_label.add_theme_color_override("font_color", Color.WHITE)
 		stock_label.add_theme_color_override("font_outline_color", Color.BLACK)
 		stock_label.add_theme_constant_override("outline_size", 3)
@@ -427,61 +441,104 @@ func _show_skill_buy_popup(skill: String):
 	add_child(overlay)
 	_buy_popup = overlay
 
-	var panel := Panel.new()
+	var center := CenterContainer.new()
+	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	overlay.add_child(center)
+
+	var panel := PanelContainer.new()
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color(0.15, 0.15, 0.15, 0.95)
 	style.set_corner_radius_all(12)
+	style.content_margin_left = 18.0
+	style.content_margin_top = 14.0
+	style.content_margin_right = 18.0
+	style.content_margin_bottom = 14.0
 	panel.add_theme_stylebox_override("panel", style)
-	panel.position = Vector2(90, 300)
-	panel.size = Vector2(300, 282)
-	overlay.add_child(panel)
+	center.add_child(panel)
 
 	var vbox := VBoxContainer.new()
-	vbox.position = Vector2(15, 14)
-	vbox.size = Vector2(270, 254)
 	vbox.add_theme_constant_override("separation", 10)
+	vbox.custom_minimum_size = Vector2(180, 0)
 	panel.add_child(vbox)
 
 	var title := Label.new()
 	title.text = TranslationManager.t("skill_buy_title")
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.add_theme_font_size_override("font_size", 16)
+	title.add_theme_font_size_override("font_size", 14)
 	vbox.add_child(title)
 
 	var name_label := Label.new()
 	name_label.text = TranslationManager.t(_SKILL_NAME_KEYS[skill])
 	name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	name_label.add_theme_font_size_override("font_size", 18)
+	name_label.add_theme_font_size_override("font_size", 16)
 	vbox.add_child(name_label)
 
-	var price_label := Label.new()
 	var price: int = SaveManager.SKILL_CONFIG[skill]["price"]
 	var stock_granted: int = SaveManager.SKILL_CONFIG[skill]["stock_granted"]
-	price_label.text = TranslationManager.tf("skill_buy_price", [price, stock_granted])
+
+	var price_label := Label.new()
+	price_label.text = "%d %s" % [price, TranslationManager.t("coins")]
 	price_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	price_label.add_theme_font_size_override("font_size", 14)
+	price_label.add_theme_font_size_override("font_size", 13)
 	vbox.add_child(price_label)
+
+	var row := HBoxContainer.new()
+	row.alignment = BoxContainer.ALIGNMENT_CENTER
+	row.add_theme_constant_override("separation", 10)
+	vbox.add_child(row)
+
+	var uses_label := Label.new()
+	uses_label.text = str(stock_granted)
+	uses_label.add_theme_font_size_override("font_size", 16)
+	uses_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	row.add_child(uses_label)
+
+	var x_label := Label.new()
+	x_label.text = "X"
+	x_label.add_theme_font_size_override("font_size", 16)
+	x_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	row.add_child(x_label)
+
+	var icon_panel := PanelContainer.new()
+	var icon_style := StyleBoxFlat.new()
+	icon_style.bg_color = Color(0.25, 0.25, 0.25, 1.0)
+	icon_style.set_border_width_all(2)
+	icon_style.border_color = Color(1, 1, 1, 0.8)
+	icon_style.set_corner_radius_all(4)
+	icon_style.content_margin_left = 4.0
+	icon_style.content_margin_top = 4.0
+	icon_style.content_margin_right = 4.0
+	icon_style.content_margin_bottom = 4.0
+	icon_panel.add_theme_stylebox_override("panel", icon_style)
+	row.add_child(icon_panel)
+
+	var icon := TextureRect.new()
+	icon.texture = load(SaveManager.SKILL_CONFIG[skill]["icon"])
+	icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	icon.custom_minimum_size = Vector2(44, 44)
+	icon_panel.add_child(icon)
 
 	var stock_label := Label.new()
 	stock_label.text = TranslationManager.tf("skill_current_stock", [SaveManager.get_skill_stock(skill)])
 	stock_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	stock_label.add_theme_font_size_override("font_size", 12)
+	stock_label.add_theme_font_size_override("font_size", 11)
 	vbox.add_child(stock_label)
 
 	var confirm_btn := Button.new()
 	confirm_btn.text = TranslationManager.t("ok")
-	confirm_btn.custom_minimum_size = Vector2(120, 40)
-	confirm_btn.add_theme_font_size_override("font_size", 16)
+	confirm_btn.custom_minimum_size = Vector2(120, 34)
+	confirm_btn.add_theme_font_size_override("font_size", 14)
 	confirm_btn.add_theme_color_override("font_color", Color.BLACK)
 	confirm_btn.add_theme_color_override("font_focus_color", Color.BLACK)
 	confirm_btn.add_theme_color_override("font_hover_color", Color.BLACK)
 	confirm_btn.add_theme_color_override("font_pressed_color", Color.BLACK)
 	var confirm_sb := StyleBoxTexture.new()
 	confirm_sb.texture = GOLD_SMALL
-	confirm_sb.content_margin_left = 16.0
-	confirm_sb.content_margin_top = 8.0
-	confirm_sb.content_margin_right = 16.0
-	confirm_sb.content_margin_bottom = 8.0
+	confirm_sb.content_margin_left = 12.0
+	confirm_sb.content_margin_top = 6.0
+	confirm_sb.content_margin_right = 12.0
+	confirm_sb.content_margin_bottom = 6.0
 	confirm_btn.add_theme_stylebox_override("normal", confirm_sb)
 	confirm_btn.add_theme_stylebox_override("hover", confirm_sb)
 	confirm_btn.add_theme_stylebox_override("pressed", confirm_sb)
@@ -491,18 +548,18 @@ func _show_skill_buy_popup(skill: String):
 
 	var cancel_btn := Button.new()
 	cancel_btn.text = TranslationManager.t("cancel")
-	cancel_btn.custom_minimum_size = Vector2(120, 40)
-	cancel_btn.add_theme_font_size_override("font_size", 16)
+	cancel_btn.custom_minimum_size = Vector2(120, 34)
+	cancel_btn.add_theme_font_size_override("font_size", 14)
 	cancel_btn.add_theme_color_override("font_color", Color.BLACK)
 	cancel_btn.add_theme_color_override("font_focus_color", Color.BLACK)
 	cancel_btn.add_theme_color_override("font_hover_color", Color.BLACK)
 	cancel_btn.add_theme_color_override("font_pressed_color", Color.BLACK)
 	var cancel_sb := StyleBoxTexture.new()
 	cancel_sb.texture = GOLD_SMALL
-	cancel_sb.content_margin_left = 16.0
-	cancel_sb.content_margin_top = 8.0
-	cancel_sb.content_margin_right = 16.0
-	cancel_sb.content_margin_bottom = 8.0
+	cancel_sb.content_margin_left = 12.0
+	cancel_sb.content_margin_top = 6.0
+	cancel_sb.content_margin_right = 12.0
+	cancel_sb.content_margin_bottom = 6.0
 	cancel_btn.add_theme_stylebox_override("normal", cancel_sb)
 	cancel_btn.add_theme_stylebox_override("hover", cancel_sb)
 	cancel_btn.add_theme_stylebox_override("pressed", cancel_sb)

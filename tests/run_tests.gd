@@ -1473,7 +1473,7 @@ func _test_skill_buy_popup_price_shown():
 	var tm := root.get_node("TranslationManager")
 	var price: int = sm.SKILL_CONFIG["undo"]["price"]
 	var stock_granted: int = sm.SKILL_CONFIG["undo"]["stock_granted"]
-	var price_text: String = tm.tf("skill_buy_price", [price, stock_granted])
+	var price_text: String = "%d %s" % [price, tm.t("coins")]
 	var insufficient_text: String = tm.t("insufficient_coins")
 
 	sm.coins = price - 1

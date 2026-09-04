@@ -85,6 +85,21 @@ func _refresh_mood_hearts(_new_mood: int = -1):
 			heart.texture = heart_lost_texture
 
 func _setup_skill_buttons():
+	var helper_bar := undo_button.get_parent().get_parent() as Control
+	var skill_panel := Panel.new()
+	skill_panel.position = Vector2(4, 0)
+	skill_panel.size = Vector2(472, 84)
+	skill_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var skill_panel_style := StyleBoxFlat.new()
+	skill_panel_style.bg_color = Color(1, 1, 1, 0.6)
+	skill_panel_style.set_corner_radius_all(12)
+	skill_panel_style.content_margin_left = 8.0
+	skill_panel_style.content_margin_top = 4.0
+	skill_panel_style.content_margin_right = 8.0
+	skill_panel_style.content_margin_bottom = 4.0
+	skill_panel.add_theme_stylebox_override("panel", skill_panel_style)
+	helper_bar.add_child(skill_panel)
+	helper_bar.move_child(skill_panel, 0)
 	var square_tex := preload("res://assets/buttons/square_small.png")
 	var buttons := [
 		[undo_button, "undo"],
@@ -101,10 +116,10 @@ func _setup_skill_buttons():
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.set_anchors_preset(Control.PRESET_CENTER)
-		icon.offset_left = -16
-		icon.offset_top = -16
-		icon.offset_right = 16
-		icon.offset_bottom = 16
+		icon.offset_left = -20
+		icon.offset_top = -20
+		icon.offset_right = 20
+		icon.offset_bottom = 20
 		icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		btn.add_child(icon)
 

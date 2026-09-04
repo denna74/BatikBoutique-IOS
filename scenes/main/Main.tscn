@@ -83,9 +83,9 @@ offset_top = 96.0
 [node name="HelperBar" type="Control" parent="." unique_id=1142790414]
 layout_mode = 1
 anchors_preset = 0
-offset_top = 775.0
+offset_top = 765.0
 offset_right = 480.0
-offset_bottom = 837.0
+offset_bottom = 849.0
 
 [node name="HBox" type="HBoxContainer" parent="HelperBar" unique_id=381466619]
 layout_mode = 1
@@ -93,16 +93,17 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
-offset_top = 1.0
+offset_top = 4.0
 offset_right = -10.0
-offset_bottom = -1.0
+offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-theme_override_constants/separation = 40
+theme_override_constants/separation = 0
 
 [node name="UndoButton" type="TextureButton" parent="HelperBar/HBox" unique_id=1824819008]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(0, 76)
+size_flags_horizontal = 3
 layout_mode = 2
 ignore_texture_size = true
 stretch_mode = 3
@@ -110,16 +111,17 @@ stretch_mode = 3
 [node name="StockLabel" type="Label" parent="HelperBar/HBox/UndoButton" unique_id=515116551]
 layout_mode = 1
 offset_left = 2.0
-offset_right = 30.0
-offset_bottom = 16.0
+offset_right = 34.0
+offset_bottom = 20.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 
 [node name="ShuffleButton" type="TextureButton" parent="HelperBar/HBox" unique_id=697791678]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(0, 76)
+size_flags_horizontal = 3
 layout_mode = 2
 ignore_texture_size = true
 stretch_mode = 3
@@ -127,16 +129,17 @@ stretch_mode = 3
 [node name="StockLabel" type="Label" parent="HelperBar/HBox/ShuffleButton" unique_id=744657829]
 layout_mode = 1
 offset_left = 2.0
-offset_right = 30.0
-offset_bottom = 16.0
+offset_right = 34.0
+offset_bottom = 20.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 
 [node name="Remove3Button" type="TextureButton" parent="HelperBar/HBox" unique_id=360749554]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(0, 76)
+size_flags_horizontal = 3
 layout_mode = 2
 ignore_texture_size = true
 stretch_mode = 3
@@ -144,16 +147,17 @@ stretch_mode = 3
 [node name="StockLabel" type="Label" parent="HelperBar/HBox/Remove3Button" unique_id=1648376650]
 layout_mode = 1
 offset_left = 2.0
-offset_right = 30.0
-offset_bottom = 16.0
+offset_right = 34.0
+offset_bottom = 20.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 
 [node name="ExtraSlotButton" type="TextureButton" parent="HelperBar/HBox" unique_id=1544939567]
-custom_minimum_size = Vector2(60, 60)
+custom_minimum_size = Vector2(0, 76)
+size_flags_horizontal = 3
 layout_mode = 2
 ignore_texture_size = true
 stretch_mode = 3
@@ -161,12 +165,12 @@ stretch_mode = 3
 [node name="StockLabel" type="Label" parent="HelperBar/HBox/ExtraSlotButton" unique_id=1978986567]
 layout_mode = 1
 offset_left = 2.0
-offset_right = 30.0
-offset_bottom = 16.0
+offset_right = 34.0
+offset_bottom = 20.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 14
 horizontal_alignment = 1
 
 [node name="Tray" parent="." unique_id=333987578 instance=ExtResource("3")]
