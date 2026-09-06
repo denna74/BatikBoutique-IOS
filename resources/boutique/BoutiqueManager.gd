@@ -5,7 +5,7 @@ const SLOT_COUNT := 3
 const EXTENDED_COST := 50000
 const MAX_EXTENDED := 2
 const UPGRADE_COSTS := {1: 50000, 2: 100000}
-const TIME_MULTIPLIERS := {0: 1.0, 1: 0.75, 2: 0.25}
+const TIME_MULTIPLIERS := {0: 1.0, 1: 0.5, 2: 0.1}
 
 static func batik_value(tile_id: int) -> int:
 	if tile_id <= 5:   return 5

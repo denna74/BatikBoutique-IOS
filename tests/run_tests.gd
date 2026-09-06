@@ -1936,7 +1936,7 @@ func _test_start_work_multiplier():
 
 	var now1 := Time.get_unix_time_from_system()
 	_check(BoutiqueManager.start_work(0, 0, 3), "old-machine fixture starts work")
-	_check(absf(float(BoutiqueManager.workshop_slots()[0].finish_at) - (now1 + seconds * 0.75)) < 1.0, "tier 1 uses 75% of time")
+	_check(absf(float(BoutiqueManager.workshop_slots()[0].finish_at) - (now1 + seconds * 0.5)) < 1.0, "tier 1 uses 50% of time")
 	var slot2: Dictionary = BoutiqueManager.workshop_slots()[0]
 	slot2.finish_at = Time.get_unix_time_from_system() - 1.0
 	BoutiqueManager.reconcile()
@@ -1945,7 +1945,7 @@ func _test_start_work_multiplier():
 
 	var now2 := Time.get_unix_time_from_system()
 	_check(BoutiqueManager.start_work(0, 0, 3), "modern-machine fixture starts work")
-	_check(absf(float(BoutiqueManager.workshop_slots()[0].finish_at) - (now2 + seconds * 0.25)) < 1.0, "tier 2 uses 25% of time")
+	_check(absf(float(BoutiqueManager.workshop_slots()[0].finish_at) - (now2 + seconds * 0.1)) < 1.0, "tier 2 uses 10% of time")
 
 func _test_save_roundtrip_upgrade():
 	var path := "user://test_upgrade_save.save"
