@@ -804,6 +804,10 @@ func _on_coin_pack_pressed(sku_key: String, btn: TextureButton):
 	SfxManager.play_click()
 	btn.disabled = true
 	var sku = IAPConfig.get_sku(sku_key)
+	var purchase_callback := _on_coin_purchase_success.bind(sku_key, btn)
+	var error_callback := _on_coin_purchase_failed.bind(btn)
+	IAPManager.purchase_successful.connect(purchase_callback, CONNECT_ONE_SHOT)
+	IAPManager.purchase_failed.connect(error_callback, CONNECT_ONE_SHOT)
 	var result = IAPManager.purchase(sku)
 	match result:
 		IAPManager.PurchaseResult.OK:
@@ -817,8 +821,11 @@ func _on_coin_pack_pressed(sku_key: String, btn: TextureButton):
 			if is_instance_valid(_iap_status):
 				_iap_status.text = TranslationManager.t("iap_unavailable")
 			btn.disabled = false
-	IAPManager.purchase_successful.connect(_on_coin_purchase_success.bind(sku_key, btn), CONNECT_ONE_SHOT)
-	IAPManager.purchase_failed.connect(_on_coin_purchase_failed.bind(btn), CONNECT_ONE_SHOT)
+	if result != IAPManager.PurchaseResult.OK:
+		if IAPManager.purchase_successful.is_connected(purchase_callback):
+			IAPManager.purchase_successful.disconnect(purchase_callback)
+		if IAPManager.purchase_failed.is_connected(error_callback):
+			IAPManager.purchase_failed.disconnect(error_callback)
 
 func _on_coin_purchase_success(sku: String, token: String, expected_sku_key: String, btn: TextureButton):
 	if sku != IAPConfig.get_sku(expected_sku_key):

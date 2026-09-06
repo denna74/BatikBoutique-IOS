@@ -15,12 +15,13 @@ signal purchase_failed(sku: String)
 signal billing_ready
 signal purchases_restored
 
-enum PurchaseResult { OK, NOT_INITIALIZED, NO_SKU, UNAVAILABLE }
+enum PurchaseResult { OK, NOT_INITIALIZED, NO_SKU, UNAVAILABLE, BUSY }
 
 var _initialized: bool = false
 var _products_ready: bool = false
 var _pending_restorations: Array[Dictionary] = []
 var _purchases_by_token: Dictionary = {}
+var _purchase_in_progress: bool = false
 var last_products_status: String = ""
 var _last_products_raw: Dictionary = {}
 var _last_products_native_count: int = 0
@@ -178,6 +179,8 @@ func purchase(sku: String) -> int:
 		return PurchaseResult.UNAVAILABLE
 	if not _initialized:
 		return PurchaseResult.NOT_INITIALIZED
+	if _purchase_in_progress:
+		return PurchaseResult.BUSY
 	if sku.is_empty():
 		return PurchaseResult.NO_SKU
 	var props = {
@@ -186,7 +189,11 @@ func purchase(sku: String) -> int:
 		},
 		"type": "in-app"
 	}
-	iap.request_purchase(props)
+	_purchase_in_progress = true
+	var request_result = iap.request_purchase(props)
+	if request_result is Dictionary and not request_result.get("success", true):
+		_purchase_in_progress = false
+		return PurchaseResult.UNAVAILABLE
 	return PurchaseResult.OK
 
 func finalize_purchase(token: String, sku: String):
@@ -207,6 +214,7 @@ func _acknowledge_purchase(purchase: Dictionary, sku: String):
 	iap.finish_transaction_dict(purchase, is_consumable)
 
 func _on_purchase_updated(purchase: Dictionary):
+	_purchase_in_progress = false
 	var product_id = purchase.get("productId", "")
 	var token = purchase.get("transactionId", "")
 	if product_id.is_empty() or token.is_empty():
@@ -216,6 +224,7 @@ func _on_purchase_updated(purchase: Dictionary):
 	purchase_successful.emit(product_id, token)
 
 func _on_purchase_error(error: Dictionary):
+	_purchase_in_progress = false
 	print("Purchase failed: ", error.get("message", "unknown"))
-	var sku = error.get("sku", "")
+	var sku = error.get("sku", error.get("productId", ""))
 	purchase_failed.emit(sku)
